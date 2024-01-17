@@ -1,0 +1,47 @@
+@import "scss/functions";
+@import "scss/variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+
+$new-primary: rgb(209, 0, 191);
+$new-secondary: rgb(230, 23, 5);
+$new-warning: rgb(5, 230, 84);
+
+$new-theme-colors: (
+  "primary": $new-primary,
+  "secondary": $new-secondary,
+  "warning": $new-warning,
+);
+
+.card {
+  min-height: 100%;
+}
+
+.card-body {
+  display: flex;
+  align-content: space-around;
+
+  p {
+    font-family: "Merriweather", serif;
+    font-size: 1.5em;
+  }
+}
+.buttons {
+  text-align: end;
+
+  :first-child {
+    color: aliceblue;
+    background-color: $new-warning;
+  }
+  :nth-child(2) {
+    margin-left: 0.5em;
+    color: aliceblue;
+    background-color: $new-secondary;
+  }
+}
+
+nav {
+  margin-bottom: 3em;
+}
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+@import "scss/bootstrap.scss";
